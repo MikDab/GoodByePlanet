@@ -11,16 +11,16 @@ public class PollutionListener : MonoBehaviour
 
     public Slider slider;
 
-    public Polution polution;
+    Pollution pollution;
 
     void Awake()
     {
-        polution = GameObject.FindObjectOfType<Polution>();
+        pollution = GameObject.FindObjectOfType<Pollution>();
     }
 
     void Update()
     {
-        slider.value = polution.CalculatePolutionPercentage();
+        slider.value = pollution.CalculatePollutionPercentage();
 
         if (slider.value == 100)
         {

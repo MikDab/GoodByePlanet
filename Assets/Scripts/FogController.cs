@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class FogController : MonoBehaviour
 {
-    private float Offset = 9;
-    public float FogChangeSpeed;
+    [SerializeField] float fogChangeSpeed;
 
-    Polution polution;
-    int maxPollution;
+    private Pollution pollution;
+    private int maxPollution;
+    private float offset = 9;
 
     private void Start()
     {
-        polution = GetComponent<Polution>();
-        maxPollution = polution.GetMaxPolution();
+        pollution = GetComponent<Pollution>();
+        maxPollution = pollution.GetMaxPollution();
     }
 
     void Update()
     {
-        float smogDensity = ((float) polution.GetPolutionCount() / (float) maxPollution) / Offset;
+        float smogDensity = ((float) pollution.GetPollutionCount() / (float) maxPollution) / offset;
 
         if (smogDensity > RenderSettings.fogDensity)
         {
-            RenderSettings.fogDensity += Time.deltaTime * FogChangeSpeed;
+            RenderSettings.fogDensity += Time.deltaTime * fogChangeSpeed;
         }
         else if (smogDensity < RenderSettings.fogDensity)
         {
-            RenderSettings.fogDensity -= Time.deltaTime * FogChangeSpeed;
+            RenderSettings.fogDensity -= Time.deltaTime * fogChangeSpeed;
         }
 
         RenderSettings.fogDensity = Mathf.Clamp(RenderSettings.fogDensity, 0f, 1f);
