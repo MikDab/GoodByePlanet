@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TreeController : MonoBehaviour, OnRightClick, OnLeftClick
 {
-    Polution polution;
+    Pollution pollution;
     SpotController spotController;
 
     public GameEvent DeselectAllStichijos;
 
     private void Start()
     {
-        polution = FindObjectOfType<Polution>();
+        pollution = FindObjectOfType<Pollution>();
         spotController = transform.parent.GetComponent<SpotController>();
     }
 
@@ -35,21 +35,21 @@ public class TreeController : MonoBehaviour, OnRightClick, OnLeftClick
             case Stichija.Audra:
                 if (isTreeCut)
                 {
-                    polution.ReducePolution();
+                    pollution.ReducePollution();
                     spotController.trees.GetComponent<Animator>().SetTrigger("Grow");
                     spotController.ShrunkTrees = false;
                 }
                 break;
             case Stichija.Kometos:
-                polution.IncreasePolution();
+                pollution.IncreasePollution();
                 RightClick();
                 break;
             case Stichija.Viesulas:
-                polution.IncreasePolution();
+                pollution.IncreasePollution();
                 RightClick();
                 break;
             case Stichija.Zaibas:
-                polution.IncreasePolution();
+                pollution.IncreasePollution();
                 RightClick();
                 break;
             default:

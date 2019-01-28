@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FireController : MonoBehaviour, OnRightClick, OnLeftClick
 {
-    Polution polution;
+    Pollution pollution;
 
     public GameEvent DeselectAllStichijos;
 
     private void Start()
     {
-        polution = FindObjectOfType<Polution>();
+        pollution = FindObjectOfType<Pollution>();
     }
 
     public void RightClick()
@@ -24,19 +24,19 @@ public class FireController : MonoBehaviour, OnRightClick, OnLeftClick
         switch (GameController.CurrentlySelectedStichija)
         {
             case Stichija.Audra:
-                polution.ReducePolution();
+                pollution.ReducePollution();
                 RightClick();
                 break;
             case Stichija.Kometos:
-                polution.IncreasePolution();
+                pollution.IncreasePollution();
                 RightClick();
                 break;
             case Stichija.Viesulas:
-                polution.IncreasePolution();
+                pollution.IncreasePollution();
                 RightClick();
                 break;
             case Stichija.Zaibas:
-                polution.IncreasePolution();
+                pollution.IncreasePollution();
                 RightClick();
                 break;
             default:

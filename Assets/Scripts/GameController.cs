@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public enum Stichija { Nothing = 0, Audra = 1, Zaibas = 2, Kometos = 3, Viesulas = 4 }
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] Polution polution;
+    [SerializeField] Pollution pollution;
     [SerializeField] SoundController soundController;
     [SerializeField] float timeIntervalBetweenCuts = 1.5f;
     [SerializeField] float waitForSecondsBeforeStart = 8.2f;
+    [SerializeField] GameObject gameplayCanvas;
+    [SerializeField] GameObject pauseCanvas;
 
     public GameObject earth;
     public GameController Instance { get; private set; }
@@ -21,6 +22,8 @@ public class GameController : MonoBehaviour
     public int destroyTreesWhen = 50;
     public int treesOnStart = 120;
 
+    private bool gameHasStarted = false;
+    private bool gameIsPaused = false;
     private float timeBeforeNextTreeCut;
     private float conflictSpawnCounter = 0;
     private float currentWaveTime;
@@ -39,7 +42,7 @@ public class GameController : MonoBehaviour
             return;
         }
 
-        if(earth.activeInHierarchy)
+        if (earth.activeInHierarchy)
         {
             earth.SetActive(false);
         }
@@ -55,8 +58,10 @@ public class GameController : MonoBehaviour
     IEnumerator LateCall()
     {
         yield return new WaitForSeconds(waitForSecondsBeforeStart);
+        gameTime = 0f;
+        gameHasStarted = true;
         earth.SetActive(true);
-        polution = GetComponent<Polution>();
+        pollution = GetComponent<Pollution>();
         ResetTreeCutCounter();
         InitialSpawn();
     }
@@ -117,6 +122,8 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        QuitGame();
+        PauseGame();
         IncreaseGameTime();
 
         conflictSpawnCounter += Time.deltaTime * conflictSpawnSpeed;
@@ -165,7 +172,7 @@ public class GameController : MonoBehaviour
             SpotController randomTreeSpot = treesEnabled[Random.Range(0, treesEnabled.Count)];
             randomTreeSpot.trees.GetComponent<Animator>().SetTrigger("Shrink");
             randomTreeSpot.ShrunkTrees = true;
-            polution.IncreasePolution();
+            pollution.IncreasePollution();
             ResetTreeCutCounter();
         }
     }
@@ -200,6 +207,44 @@ public class GameController : MonoBehaviour
                 }
                 break;
             }
+        }
+    }
+
+    public float GetGameTime()
+    {
+        if(gameHasStarted)
+        {
+            return gameTime;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+
+    private void QuitGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
+    private void PauseGame()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && !gameIsPaused)
+        {
+            Time.timeScale = 0f;
+            gameplayCanvas.SetActive(false);
+            pauseCanvas.SetActive(true);
+            gameIsPaused = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) && gameIsPaused)
+        {
+            Time.timeScale = 1f;
+            pauseCanvas.SetActive(false);
+            gameplayCanvas.SetActive(true);
+            gameIsPaused = false;
         }
     }
 }

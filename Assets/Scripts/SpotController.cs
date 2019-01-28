@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
 {
+    [SerializeField] Pollution pollutionReference;
+
     public GameObject trees;
     public GameObject Factory;
     public GameObject Fire;
@@ -11,13 +13,13 @@ public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
     public List<GameObject> Trash;
     public List<GameObject> Apartments;
     public GameObject CurrentlyEnabled;
-    public Polution PolutionReference;
     public bool ShrunkTrees = false;
     public GameObject ParticleSystemObject;
 
     public void Awake()
     {
-        PolutionReference = FindObjectOfType<Polution>();
+        pollutionReference = FindObjectOfType<Pollution>();
+        trees = transform.GetChild(0).gameObject;
         StopParticles();
     }
 
@@ -94,7 +96,7 @@ public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
             if (ShrunkTrees)
             {
                 this.GetComponent<Animator>().SetTrigger("Grow");
-                PolutionReference.ReducePolution();
+                pollutionReference.ReducePollution();
             }
         }
     }
@@ -113,7 +115,7 @@ public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
         if (CurrentlyEnabled == trees)
         {
             trees.GetComponent<Animator>().SetTrigger("Shrink");
-            PolutionReference.IncreasePolution();
+            pollutionReference.IncreasePollution();
             ShrunkTrees = true;
         }
     }
