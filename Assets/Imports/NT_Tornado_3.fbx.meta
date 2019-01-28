@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: a24aa0f64021c7047aa51ba3ead2b2a6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: GRP_Tornado
+    100002: //RootNode
+    100004: Tornado
+    100006: Tornado 1
+    100008: Tornado1
+    100010: Tornado10
+    100012: Tornado11
+    100014: Tornado12
+    100016: Tornado13
+    100018: Tornado14
+    100020: Tornado15
+    100022: Tornado16
+    100024: Tornado17
+    100026: Tornado18
+    100028: Tornado2
+    100030: Tornado3
+    100032: Tornado4
+    100034: Tornado5
+    100036: Tornado6
+    100038: Tornado7
+    100040: Tornado8
+    400000: GRP_Tornado
+    400002: //RootNode
+    400004: Tornado
+    400006: Tornado 1
+    400008: Tornado1
+    400010: Tornado10
+    400012: Tornado11
+    400014: Tornado12
+    400016: Tornado13
+    400018: Tornado14
+    400020: Tornado15
+    400022: Tornado16
+    400024: Tornado17
+    400026: Tornado18
+    400028: Tornado2
+    400030: Tornado3
+    400032: Tornado4
+    400034: Tornado5
+    400036: Tornado6
+    400038: Tornado7
+    400040: Tornado8
+    2100000: Scene_Material2
+    2300000: Tornado
+    2300002: Tornado 1
+    2300004: Tornado1
+    2300006: Tornado10
+    2300008: Tornado11
+    2300010: Tornado12
+    2300012: Tornado13
+    2300014: Tornado14
+    2300016: Tornado15
+    2300018: Tornado16
+    2300020: Tornado17
+    2300022: Tornado18
+    2300024: Tornado2
+    2300026: Tornado3
+    2300028: Tornado4
+    2300030: Tornado5
+    2300032: Tornado6
+    2300034: Tornado7
+    2300036: Tornado8
+    3300000: Tornado
+    3300002: Tornado 1
+    3300004: Tornado1
+    3300006: Tornado10
+    3300008: Tornado11
+    3300010: Tornado12
+    3300012: Tornado13
+    3300014: Tornado14
+    3300016: Tornado15
+    3300018: Tornado16
+    3300020: Tornado17
+    3300022: Tornado18
+    3300024: Tornado2
+    3300026: Tornado3
+    3300028: Tornado4
+    3300030: Tornado5
+    3300032: Tornado6
+    3300034: Tornado7
+    3300036: Tornado8
+    4300000: Tornado11
+    4300002: Tornado17
+    4300004: Tornado7
+    4300006: Tornado
+    4300008: Tornado
+    4300010: Tornado13
+    4300012: Tornado10
+    4300014: Tornado8
+    4300016: Tornado2
+    4300018: Tornado18
+    4300020: Tornado16
+    4300022: Tornado14
+    4300024: Tornado15
+    4300026: Tornado6
+    4300028: Tornado12
+    4300030: Tornado1
+    4300032: Tornado4
+    4300034: Tornado3
+    4300036: Tornado5
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scene_Material2
+    second: {fileID: 2100000, guid: f1d6e1026d8d21740a8c200d53d65d6c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
