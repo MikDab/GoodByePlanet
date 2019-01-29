@@ -10,11 +10,11 @@ public class GameController : MonoBehaviour
     [SerializeField] SoundController soundController;
     [SerializeField] float timeIntervalBetweenCuts = 1.5f;
     [SerializeField] float waitForSecondsBeforeStart = 8.2f;
-    [SerializeField] GameObject gameplayCanvas;
-    [SerializeField] GameObject pauseCanvas;
+
+    public GameEvent PauseGameEvent;
 
     public GameObject earth;
-    public GameController Instance { get; private set; }
+    public static GameController Instance { get; private set; }
     public SpotsInTrigger SpotsInTriggerReference;
     public float timeBeforeNextConflictSpawn = 1f;
     public float conflictSpawnSpeed;
@@ -22,8 +22,6 @@ public class GameController : MonoBehaviour
     public int destroyTreesWhen = 50;
     public int treesOnStart = 120;
 
-    private bool gameHasStarted = false;
-    private bool gameIsPaused = false;
     private float timeBeforeNextTreeCut;
     private float conflictSpawnCounter = 0;
     private float currentWaveTime;
@@ -42,6 +40,8 @@ public class GameController : MonoBehaviour
             return;
         }
 
+        PauseGame.Pause = false;
+
         if (earth.activeInHierarchy)
         {
             earth.SetActive(false);
@@ -59,11 +59,11 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitForSecondsBeforeStart);
         gameTime = 0f;
-        gameHasStarted = true;
         earth.SetActive(true);
         pollution = GetComponent<Pollution>();
         ResetTreeCutCounter();
         InitialSpawn();
+        yield return null;
     }
 
     public List<SpotController> getEmptySpots()
@@ -122,8 +122,19 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        QuitGame();
-        PauseGame();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PauseTheGame();
+        }
+
+        if (PauseGame.Pause)
+            return;
+
         IncreaseGameTime();
 
         conflictSpawnCounter += Time.deltaTime * conflictSpawnSpeed;
@@ -212,39 +223,26 @@ public class GameController : MonoBehaviour
 
     public float GetGameTime()
     {
-        if(gameHasStarted)
-        {
-            return gameTime;
-        }
-        else
-        {
-            return 0f;
-        }
+        return gameTime;
     }
 
     private void QuitGame()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        Application.Quit();
+    }
+
+    private void PauseTheGame()
+    {
+        if (!PauseGame.Pause)
         {
-            Application.Quit();
+            PauseGameEvent.Raise();
+            PauseGame.Pause = true;
         }
     }
 
-    private void PauseGame()
+    public void ResumeTheGame()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !gameIsPaused)
-        {
-            Time.timeScale = 0f;
-            gameplayCanvas.SetActive(false);
-            pauseCanvas.SetActive(true);
-            gameIsPaused = true;
-        }
-        else if(Input.GetKeyDown(KeyCode.Space) && gameIsPaused)
-        {
-            Time.timeScale = 1f;
-            pauseCanvas.SetActive(false);
-            gameplayCanvas.SetActive(true);
-            gameIsPaused = false;
-        }
+        PauseGame.Pause = false;
     }
+
 }

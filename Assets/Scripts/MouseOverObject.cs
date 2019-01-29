@@ -8,6 +8,9 @@ public class MouseOverObject : MonoBehaviour
 
     private void OnMouseOver()
     {
+        if (PauseGame.Pause)
+            return;
+
         Highlight.SetActive(true);
         MouseOverData.Instance.CurrentlyActiveController = this.GetComponent<SpotController>();
     }

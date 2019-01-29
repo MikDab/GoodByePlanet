@@ -22,6 +22,9 @@ public class MouseOverData : MonoBehaviour
 
     void Update()
     {
+        if (PauseGame.Pause)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             if (CurrentlyActiveController != null)
@@ -30,12 +33,12 @@ public class MouseOverData : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            if (CurrentlyActiveController != null)
-            {
-                CurrentlyActiveController.GetComponent<OnRightClick>().RightClick();
-            }
-        }
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    if (CurrentlyActiveController != null)
+        //    {
+        //        CurrentlyActiveController.GetComponent<OnRightClick>().RightClick();
+        //    }
+        //}
     }
 }

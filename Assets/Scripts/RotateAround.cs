@@ -10,7 +10,7 @@ public class RotateAround : MonoBehaviour
 
     public void Update()
     {
-        if (Rotate)
+        if (Rotate && !PauseGame.Pause)
             this.transform.Rotate(rotation * speed * Time.deltaTime);
     }
 

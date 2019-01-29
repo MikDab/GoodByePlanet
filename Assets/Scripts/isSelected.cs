@@ -8,6 +8,7 @@ public class isSelected : MonoBehaviour
     public Stichija stichija;
     public List<isSelected> Selections;
     public Color SelectedColor;
+    public KeyCode SelectionShortcut;
     private Color startColor;
 
     void Awake()
@@ -17,6 +18,9 @@ public class isSelected : MonoBehaviour
 
     public void OnClick()
     {
+        if (PauseGame.Pause)
+            return;
+
         DeselectAll();
         SelectThis();
     }
@@ -39,5 +43,13 @@ public class isSelected : MonoBehaviour
     {
         this.GetComponent<Image>().color = startColor;
         GameController.CurrentlySelectedStichija = Stichija.Nothing;
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(SelectionShortcut))
+        {
+            OnClick();
+        }
     }
 }

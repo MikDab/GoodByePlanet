@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfa81d91ba04c4d4c8de0f26482fef52, type: 3}
-  m_Name: DeselectAll
+  m_Name: HelpCanvas
   m_EditorClassIdentifier: 
-  Description: 'Event responsible for deselecting all of
+  Description: 'Event gets called when Menu Scene help
 
-    the Stichijos so that a single one can be
-
-    selected.'
+    canvas needs to be enabled'

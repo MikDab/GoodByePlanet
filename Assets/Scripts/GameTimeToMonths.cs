@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class GameTimeToMonths : MonoBehaviour
 {
     GameController gameController;
-    float gameTime;
+    float gameTime = 0;
     Text monthsText;
 
     private void Start()
     {
-        gameController = FindObjectOfType<GameController>();
+        gameController = GameController.Instance;
         monthsText = GetComponent<Text>();
     }
 

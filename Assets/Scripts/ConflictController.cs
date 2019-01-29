@@ -29,16 +29,4 @@ public class ConflictController : MonoBehaviour
     {
         return HP;
     }
-
-    //private void OnMouseOver()
-    //{
-    //    GetComponent<Renderer>().material.color = Color.cyan;
-    //    print("Entered");
-    //}
-
-    //private void OnMouseExit()
-    //{
-    //    GetComponent<Renderer>().material.color = startColor;
-    //    print("Exited");
-    //}
 }

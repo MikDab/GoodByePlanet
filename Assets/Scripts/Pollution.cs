@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Pollution : MonoBehaviour
 {
-    [SerializeField] StringVariable pollutionText;
     [SerializeField] int pollutionCount = 0;
     [SerializeField] int maxPollution = 140;
 
@@ -13,10 +12,6 @@ public class Pollution : MonoBehaviour
     public void IncreasePollution()
     {
         pollutionCount++;
-        if (pollutionText != null)
-        {
-            UpdatePollutionText();
-        }
     }
 
     public void ReducePollution()
@@ -25,20 +20,13 @@ public class Pollution : MonoBehaviour
         {
             pollutionCount--;
         }
-
-        if (pollutionText != null)
-        {
-            UpdatePollutionText();
-        }
-    }
-
-    private void UpdatePollutionText()
-    {
-        pollutionText.Value = CalculatePollutionPercentage() + "% Pollution";
     }
 
     void Update()
     {
+        if (PauseGame.Pause)
+            return;
+
         if (CalculatePollutionPercentage() >= pollutionThreshold)
         {
 
@@ -49,7 +37,6 @@ public class Pollution : MonoBehaviour
     {
         if (pollutionCount > 0)
         {
-
             float polutionPercentage = (float) pollutionCount / maxPollution;
             float mathResult = Mathf.Round(polutionPercentage * 100);
             return mathResult;

@@ -18,6 +18,9 @@ public class FogController : MonoBehaviour
 
     void Update()
     {
+        if (PauseGame.Pause)
+            return;
+
         float smogDensity = ((float) pollution.GetPollutionCount() / (float) maxPollution) / offset;
 
         if (smogDensity > RenderSettings.fogDensity)

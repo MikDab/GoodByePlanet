@@ -3888,11 +3888,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndingCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5507408056558531865, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3906,22 +3901,22 @@ PrefabInstance:
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -156.76376
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
@@ -3951,12 +3946,12 @@ PrefabInstance:
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.1403165
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 22.620955
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507408056558531877, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
         type: 3}
@@ -3997,33 +3992,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507408056095389508, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507408056710818324, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507408056729101304, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507408057764193229, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507408057677190418, guid: 9f7a2b1cf3c234249862a53b6c6c2e54,
-        type: 3}
-      propertyPath: m_Text
-      value: 'THE PLANET DIED. THE END.
-
-'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f7a2b1cf3c234249862a53b6c6c2e54, type: 3}
@@ -9547,11 +9515,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7127084168956208323, guid: dbb91b974a03c584792969fb39c59832,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7127084168956208327, guid: dbb91b974a03c584792969fb39c59832,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9656,21 +9619,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7127084168799180860, guid: dbb91b974a03c584792969fb39c59832,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7127084168799180860, guid: dbb91b974a03c584792969fb39c59832,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7127084168799180860, guid: dbb91b974a03c584792969fb39c59832,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbb91b974a03c584792969fb39c59832, type: 3}
@@ -10517,6 +10465,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1562108138}
+  - component: {fileID: 1562108142}
+  - component: {fileID: 1562108141}
+  - component: {fileID: 1562108140}
+  - component: {fileID: 1562108139}
+  - component: {fileID: 1562108146}
+  - component: {fileID: 1562108145}
+  - component: {fileID: 1562108144}
+  - component: {fileID: 1562108143}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -10532,7 +10488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562108137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1403165, y: -22.620955, z: 156.76376}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1211921284}
@@ -10542,6 +10498,207 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562108139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6ba7577d3bf37b54aa688ed8069863de, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562108142}
+        m_MethodName: EnableEndCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1562108140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ae2b2b2376e283e48b71b640e1503648, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562108142}
+        m_MethodName: EnablePauseCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1562108141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2fe39251c1a3bdc4aa9f2f6e42fb3ecc, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562108142}
+        m_MethodName: EnableGameplayCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1562108142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89199a56f195c614188179fb09ddea40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameplayCanvas: {fileID: 1211921280}
+  PauseCanvas: {fileID: 309052801}
+  EndCanvas: {fileID: 918213775}
+--- !u!114 &1562108143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f1f18b985ea101140ac01ff68625d5e5, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562108146}
+        m_MethodName: MenuScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1562108144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 99971ad433bfa644b88fd9c0038cb5eb, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562108146}
+        m_MethodName: PlayScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1562108145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 13fd95d72c1f15843b253c0924ef8067, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1562108146}
+        m_MethodName: QuitApllication
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1562108146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562108137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3142268dd045aa47827dc88b840526f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1566387374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10664,10 +10821,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 814803332, guid: 73f99a6b10c349e40998780409db09b1, type: 3}
-      propertyPath: ending
-      value: 
-      objectReference: {fileID: 918213775}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73f99a6b10c349e40998780409db09b1, type: 3}
 --- !u!1001 &1581947398
@@ -11062,6 +11215,7 @@ GameObject:
   - component: {fileID: 1603289933}
   - component: {fileID: 1603289930}
   - component: {fileID: 1603289935}
+  - component: {fileID: 1603289936}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -11112,8 +11266,7 @@ MonoBehaviour:
   soundController: {fileID: 1603289935}
   timeIntervalBetweenCuts: 1.5
   waitForSecondsBeforeStart: 0
-  gameplayCanvas: {fileID: 1211921280}
-  pauseCanvas: {fileID: 309052801}
+  PauseGameEvent: {fileID: 11400000, guid: ae2b2b2376e283e48b71b640e1503648, type: 2}
   earth: {fileID: 1165782743}
   SpotsInTriggerReference: {fileID: 1440092349}
   timeBeforeNextConflictSpawn: 1
@@ -11167,7 +11320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b87ac6398725bb4cbaf16d6d2d0e51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollutionText: {fileID: 11400000, guid: 90f7ce760269a63449d2703807f5679d, type: 2}
   pollutionCount: 0
   maxPollution: 140
   pollutionThreshold: 0
@@ -11241,6 +11393,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759f0cf14df3da4449d98e233f4f3ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1603289936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603289926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5141e8756299fae46b4d9070aff44a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 2fe39251c1a3bdc4aa9f2f6e42fb3ecc, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1603289929}
+        m_MethodName: ResumeTheGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1616269539
 PrefabInstance:
   m_ObjectHideFlags: 0

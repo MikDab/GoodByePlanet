@@ -221,6 +221,7 @@ MonoBehaviour:
   - {fileID: 1179923341}
   - {fileID: 866910207}
   SelectedColor: {r: 0.037669387, g: 0.5943396, b: 0, a: 0.6509804}
+  SelectionShortcut: 51
 --- !u!1 &4251958251673696905
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +664,7 @@ MonoBehaviour:
   - {fileID: 1179923341}
   - {fileID: 866910207}
   SelectedColor: {r: 0.037669387, g: 0.5943396, b: 0, a: 0.6509804}
+  SelectionShortcut: 49
 --- !u!1 &4251958252207247283
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,9 +766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8adc8e79c7ec72a4bab89e49dd8bd75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ending: {fileID: 0}
-  Main: {fileID: 4251958251673696905}
   slider: {fileID: 4251958252207247281}
+  GameOverEvent: {fileID: 11400000, guid: 6ba7577d3bf37b54aa688ed8069863de, type: 2}
 --- !u!1 &4251958252642612187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,6 +1330,7 @@ MonoBehaviour:
   - {fileID: 1179923341}
   - {fileID: 866910207}
   SelectedColor: {r: 0.037669387, g: 0.5943396, b: 0, a: 0.6509804}
+  SelectionShortcut: 50
 --- !u!1 &4251958253461874903
 GameObject:
   m_ObjectHideFlags: 0

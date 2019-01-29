@@ -8,6 +8,9 @@ public class SpotsInTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if (PauseGame.Pause)
+            return;
+
         if (other.GetComponent<SpotController>() == null)
             return;
 
@@ -20,6 +23,9 @@ public class SpotsInTrigger : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        if (PauseGame.Pause)
+            return;
+
         if (other.GetComponent<SpotController>() == null)
             return;
 

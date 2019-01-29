@@ -5,27 +5,22 @@ using UnityEngine.UI;
 
 public class PollutionListener : MonoBehaviour
 {
-
-    public GameObject ending;
-    public GameObject Main;
-
     public Slider slider;
-
     Pollution pollution;
+    public GameEvent GameOverEvent;
 
     void Awake()
     {
-        pollution = GameObject.FindObjectOfType<Pollution>();
+        pollution = FindObjectOfType<Pollution>();
     }
 
     void Update()
     {
         slider.value = pollution.CalculatePollutionPercentage();
 
-        if (slider.value == 100)
+        if (slider.value == 100f)
         {
-            ending.SetActive(true);
-            Main.SetActive(false);
+            GameOverEvent.Raise();
         }
     }
 

@@ -6,6 +6,9 @@ public class SoundController : MonoBehaviour
 {
     public void PlayDefaultMouseSound()
     {
+        if (PauseGame.Pause)
+            return;
+
         if (Input.GetButtonDown("Fire1"))
         {
             AudioManager.Instance.PlaySound("MouseClick1");
