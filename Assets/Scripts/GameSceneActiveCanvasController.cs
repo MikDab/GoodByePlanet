@@ -7,12 +7,14 @@ public class GameSceneActiveCanvasController : MonoBehaviour
     public GameObject GameplayCanvas;
     public GameObject PauseCanvas;
     public GameObject EndCanvas;
+    public GameObject HelpCanvas;
 
     public void EnableGameplayCanvas()
     {
         GameplayCanvas.SetActive(true);
         PauseCanvas.SetActive(false);
         EndCanvas.SetActive(false);
+        HelpCanvas.SetActive(false);
     }
 
     public void EnablePauseCanvas()
@@ -20,6 +22,7 @@ public class GameSceneActiveCanvasController : MonoBehaviour
         GameplayCanvas.SetActive(false);
         PauseCanvas.SetActive(true);
         EndCanvas.SetActive(false);
+        HelpCanvas.SetActive(false);
     }
 
     public void EnableEndCanvas()
@@ -27,6 +30,15 @@ public class GameSceneActiveCanvasController : MonoBehaviour
         GameplayCanvas.SetActive(false);
         PauseCanvas.SetActive(false);
         EndCanvas.SetActive(true);
+        HelpCanvas.SetActive(false);
+    }
+
+    public void EnableHelpCanvas()
+    {
+        GameplayCanvas.SetActive(false);
+        PauseCanvas.SetActive(false);
+        EndCanvas.SetActive(false);
+        HelpCanvas.SetActive(true);
     }
 
 }

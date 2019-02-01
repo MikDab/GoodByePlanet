@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3936781891008344672}
   - component: {fileID: 2977231184882139963}
   - component: {fileID: 1469984702399531045}
-  - component: {fileID: 3083366588842837093}
   - component: {fileID: 4561308545672050115}
   - component: {fileID: 7608605122751165819}
   m_Layer: 0
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc5a1240f7131b94fa7d4c272e96d85d, type: 2}
+  - {fileID: 2100000, guid: d4d6e816d4f9e3447857135fe1b5903b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,19 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb2b959de2c44e43b6ac1f75608e25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3083366588842837093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512475218903328678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da19e4e4066b057419c72c2c257c7d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 0
 --- !u!114 &4561308545672050115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeselectAllStichijos: {fileID: 11400000, guid: 785cdfb6b5485844fb51b523d29f0d9b,
     type: 2}
+  DefaultClickSound: {fileID: 0}
 --- !u!114 &7608605122751165819
 MonoBehaviour:
   m_ObjectHideFlags: 0

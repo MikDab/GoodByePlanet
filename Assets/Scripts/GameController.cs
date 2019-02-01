@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour
     [SerializeField] float timeIntervalBetweenCuts = 1.5f;
     [SerializeField] float waitForSecondsBeforeStart = 8.2f;
 
-    public GameEvent PauseGameEvent;
+    private bool _Pause = false;
+    public bool Pause { get { return _Pause; } private set { _Pause = value; } }
 
     public GameObject earth;
     public static GameController Instance { get; private set; }
@@ -28,6 +29,8 @@ public class GameController : MonoBehaviour
     private float gameTime = 0f;
     public static Stichija CurrentlySelectedStichija = Stichija.Nothing;
 
+    SpotController[] AllSpots;
+
     void Awake()
     {
         if (Instance == null)
@@ -40,17 +43,18 @@ public class GameController : MonoBehaviour
             return;
         }
 
-        PauseGame.Pause = false;
+        Pause = false;
 
         if (earth.activeInHierarchy)
         {
             earth.SetActive(false);
         }
+
+        AllSpots = earth.GetComponentsInChildren<SpotController>();
     }
 
     void Start()
     {
-        AudioManager.Instance.PlaySound("Soundtrack2_start");
         StartCoroutine(LateCall());
         soundController = GetComponent<SoundController>();
     }
@@ -69,9 +73,9 @@ public class GameController : MonoBehaviour
     public List<SpotController> getEmptySpots()
     {
         List<SpotController> Spots = new List<SpotController>();
-        foreach (SpotController ctrl in FindObjectsOfType<SpotController>())
+        foreach (SpotController ctrl in AllSpots)
         {
-            if (!Spots.Contains(ctrl) && !ctrl.CurrentlyEnabled)
+            if (ctrl.CurrentlyEnabled == null)
             {
                 Spots.Add(ctrl);
             }
@@ -82,7 +86,7 @@ public class GameController : MonoBehaviour
     public List<SpotController> getPopulatedGoodSpots()
     {
         List<SpotController> populatedGoodSpotList = new List<SpotController>();
-        foreach (SpotController ctrl in FindObjectsOfType<SpotController>())
+        foreach (SpotController ctrl in AllSpots)
         {
             if (ctrl.trees && !ctrl.ShrunkTrees && ctrl.CurrentlyEnabled == ctrl.trees)
             {
@@ -101,7 +105,7 @@ public class GameController : MonoBehaviour
             int random = Random.Range(0, emptySpotList.Count);
             if (emptySpotList[random].CurrentlyEnabled == null)
             {
-                emptySpotList[random].EnableTrees(true);
+                emptySpotList[random].EnableTrees();
                 emptySpotList.RemoveAt(random);
             }
         }
@@ -122,17 +126,12 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            QuitGame();
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    QuitGame();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PauseTheGame();
-        }
-
-        if (PauseGame.Pause)
+        if (Pause)
             return;
 
         IncreaseGameTime();
@@ -151,8 +150,6 @@ public class GameController : MonoBehaviour
             conflictSpawnSpeed += Time.deltaTime * 25f;
             currentWaveTime = 0;
         }
-
-        soundController.PlayDefaultMouseSound();
     }
 
     private void IncreaseGameTime()
@@ -181,9 +178,7 @@ public class GameController : MonoBehaviour
         if (timeBeforeNextTreeCut <= 0f && treesEnabled.Count > 0)
         {
             SpotController randomTreeSpot = treesEnabled[Random.Range(0, treesEnabled.Count)];
-            randomTreeSpot.trees.GetComponent<Animator>().SetTrigger("Shrink");
-            randomTreeSpot.ShrunkTrees = true;
-            pollution.IncreasePollution();
+            randomTreeSpot.DisableTrees();
             ResetTreeCutCounter();
         }
     }
@@ -201,19 +196,15 @@ public class GameController : MonoBehaviour
                 {
                     case 0:
                         ctrl.EnableApartments(true);
-                        soundController.PlayPopSound();
                         break;
                     case 1:
                         ctrl.EnableFactory(true);
-                        soundController.PlayPopSound();
                         break;
                     case 2:
                         ctrl.EnableTrash(true);
-                        soundController.PlayPopSound();
                         break;
                     default:
                         ctrl.EnableFactory(true);
-                        soundController.PlayPopSound();
                         break;
                 }
                 break;
@@ -231,18 +222,17 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
-    private void PauseTheGame()
+    public void PauseTheGame()
     {
-        if (!PauseGame.Pause)
+        if (!Pause)
         {
-            PauseGameEvent.Raise();
-            PauseGame.Pause = true;
+            Pause = true;
         }
     }
 
     public void ResumeTheGame()
     {
-        PauseGame.Pause = false;
+        Pause = false;
     }
 
 }

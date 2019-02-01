@@ -8,7 +8,7 @@ public class FogController : MonoBehaviour
 
     private Pollution pollution;
     private int maxPollution;
-    private float offset = 9;
+    private float offset = 8;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class FogController : MonoBehaviour
 
     void Update()
     {
-        if (PauseGame.Pause)
+        if (GameController.Instance.Pause)
             return;
 
         float smogDensity = ((float) pollution.GetPollutionCount() / (float) maxPollution) / offset;

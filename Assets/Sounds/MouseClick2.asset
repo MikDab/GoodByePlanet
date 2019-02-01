@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7747f0a80b9f4c9fa7afe7037e2e0, type: 3}
   m_Name: MouseClick2
   m_EditorClassIdentifier: 
-  Name: MouseClick2
+  Name: MouseClick
   clip: {fileID: 8300000, guid: b232f7d12417ba744bd78ec8c8b06208, type: 3}
   pitch: 1
   volume: 10

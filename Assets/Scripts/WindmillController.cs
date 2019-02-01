@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class WindmillController : MonoBehaviour
 {
-    [SerializeField] int penaltyPoints = 15;
-    [SerializeField] int bonusPoints = 20;
-    Score score;
-
     public GameEvent DeselectAllStichijos;
-
-    private void Start()
-    {
-        score = FindObjectOfType<Score>();
-    }
+    public GameEvent DefaultClickSound;
 
     public void RightClick()
     {
         this.gameObject.SetActive(false);
-        this.SendMessageUpwards("ClearCurrentlyEnabled");
+        this.GetComponentInParent<SpotController>().ClearCurrentlyEnabled();
     }
 
     public void LeftClick()
@@ -26,19 +18,15 @@ public class WindmillController : MonoBehaviour
         switch (GameController.CurrentlySelectedStichija)
         {
             case Stichija.Audra:
-                score.ReduceScore(penaltyPoints);
                 this.gameObject.SetActive(false);
                 break;
             case Stichija.Kometos:
-                score.ReduceScore(penaltyPoints);
                 this.gameObject.SetActive(false);
                 break;
             case Stichija.Viesulas:
-                score.ReduceScore(penaltyPoints);
                 this.gameObject.SetActive(false);
                 break;
             case Stichija.Zaibas:
-                score.ReduceScore(penaltyPoints);
                 this.gameObject.SetActive(false);
                 break;
             default:
@@ -46,5 +34,6 @@ public class WindmillController : MonoBehaviour
         }
 
         DeselectAllStichijos.Raise();
+        DefaultClickSound.Raise();
     }
 }

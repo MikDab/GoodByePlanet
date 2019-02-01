@@ -7,7 +7,11 @@ public class Pollution : MonoBehaviour
     [SerializeField] int pollutionCount = 0;
     [SerializeField] int maxPollution = 140;
 
-    [SerializeField][Range(0,1)] float pollutionThreshold;
+    [Tooltip("Value in % when pollution should escalate")]
+    [SerializeField] [Range(0, 100)] float pollutionThreshold = 0;
+    [SerializeField] float thresholdIncrementTime = 5f;
+
+    float thresholdTimer = 0f;
 
     public void IncreasePollution()
     {
@@ -24,12 +28,18 @@ public class Pollution : MonoBehaviour
 
     void Update()
     {
-        if (PauseGame.Pause)
+        if (GameController.Instance.Pause)
             return;
 
         if (CalculatePollutionPercentage() >= pollutionThreshold)
         {
+            thresholdTimer += Time.deltaTime;
 
+            if (thresholdTimer >= thresholdIncrementTime)
+            {
+                IncreasePollution();
+                thresholdTimer = 0;
+            }
         }
     }
 

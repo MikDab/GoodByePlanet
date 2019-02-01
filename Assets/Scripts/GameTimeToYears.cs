@@ -8,6 +8,7 @@ public class GameTimeToYears : MonoBehaviour
     GameController gameController;
     float gameTime;
     Text yearsText;
+    public IntVariable YearsEndured;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class GameTimeToYears : MonoBehaviour
     private void UpdateText()
     {
         yearsText.text = ConvertToYears().ToString();
+        YearsEndured.Value = ConvertToYears();
     }
 
     public int ConvertToYears()

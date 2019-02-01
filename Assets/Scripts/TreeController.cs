@@ -8,6 +8,7 @@ public class TreeController : MonoBehaviour, OnRightClick, OnLeftClick
     SpotController spotController;
 
     public GameEvent DeselectAllStichijos;
+    public GameEvent DefaultClickSound;
 
     private void Start()
     {
@@ -17,44 +18,41 @@ public class TreeController : MonoBehaviour, OnRightClick, OnLeftClick
 
     public void RightClick()
     {
+        spotController.ClearCurrentlyEnabled();
         this.gameObject.SetActive(false);
-        this.SendMessageUpwards("ClearCurrentlyEnabled");
     }
 
     public void LeftClick()
     {
-        bool isTreeCut = spotController.ShrunkTrees;
-        LeftClick(isTreeCut);
-        DeselectAllStichijos.Raise();
-    }
-
-    private void LeftClick(bool isTreeCut)
-    {
         switch (GameController.CurrentlySelectedStichija)
         {
             case Stichija.Audra:
-                if (isTreeCut)
-                {
-                    pollution.ReducePollution();
-                    spotController.trees.GetComponent<Animator>().SetTrigger("Grow");
-                    spotController.ShrunkTrees = false;
-                }
+                spotController.EnableTrees();
                 break;
+
             case Stichija.Kometos:
                 pollution.IncreasePollution();
                 RightClick();
                 break;
+
             case Stichija.Viesulas:
                 pollution.IncreasePollution();
                 RightClick();
                 break;
+
             case Stichija.Zaibas:
                 pollution.IncreasePollution();
                 RightClick();
                 break;
+
             default:
                 break;
         }
+
+        DeselectAllStichijos.Raise();
+        // for now we only play one sound when an object is clicked
+        DefaultClickSound.Raise();
+        // In future, clicking with different stichijos might use different sounds
     }
 
 }

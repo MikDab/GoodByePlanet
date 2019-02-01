@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7747f0a80b9f4c9fa7afe7037e2e0, type: 3}
   m_Name: Pop2
   m_EditorClassIdentifier: 
-  Name: Pop2
+  Name: Pop
   clip: {fileID: 8300000, guid: 45cc89ce66b451742a24b11b2fdcf1a4, type: 3}
   pitch: 1
   volume: 3

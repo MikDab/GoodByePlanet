@@ -2128,16 +2128,16 @@ GameObject:
   - component: {fileID: 1582288733011220134}
   - component: {fileID: 5730413922376729221}
   - component: {fileID: 7398369107089007129}
-  - component: {fileID: 3860685363687294216}
   - component: {fileID: 2901762147429780791}
   - component: {fileID: 3333844230617299119}
+  - component: {fileID: 8812064572939645827}
   m_Layer: 0
   m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1582288733011220134
 Transform:
   m_ObjectHideFlags: 0
@@ -2192,19 +2192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeselectAllStichijos: {fileID: 11400000, guid: 785cdfb6b5485844fb51b523d29f0d9b,
     type: 2}
---- !u!114 &3860685363687294216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4412029128213015487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da19e4e4066b057419c72c2c257c7d80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 0
+  DefaultClickSound: {fileID: 11400000, guid: e8c423497185bb9408e357a566885d2b, type: 2}
 --- !u!114 &2901762147429780791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2230,6 +2218,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb2b959de2c44e43b6ac1f75608e25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8812064572939645827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412029128213015487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1601ab32cd4f2409e51787eb5418ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnMoment: {fileID: 11400000, guid: f235be6d1a3ea49489f3b566d5fbf20d, type: 2}
 --- !u!1 &4438865082151868539
 GameObject:
   m_ObjectHideFlags: 0

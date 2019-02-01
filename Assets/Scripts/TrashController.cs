@@ -7,6 +7,7 @@ public class TrashController : MonoBehaviour, OnRightClick, OnLeftClick
     Pollution pollution;
 
     public GameEvent DeselectAllStichijos;
+    public GameEvent DefaultClickSound;
 
     private void Start()
     {
@@ -16,7 +17,7 @@ public class TrashController : MonoBehaviour, OnRightClick, OnLeftClick
     public void RightClick()
     {
         this.gameObject.SetActive(false);
-        this.SendMessageUpwards("ClearCurrentlyEnabled");
+        this.GetComponentInParent<SpotController>().ClearCurrentlyEnabled();
     }
 
     public void LeftClick()
@@ -44,5 +45,6 @@ public class TrashController : MonoBehaviour, OnRightClick, OnLeftClick
         }
 
         DeselectAllStichijos.Raise();
+        DefaultClickSound.Raise();
     }
 }

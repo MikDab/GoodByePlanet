@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7747f0a80b9f4c9fa7afe7037e2e0, type: 3}
   m_Name: Soundtrack2_start
   m_EditorClassIdentifier: 
-  Name: Soundtrack2_start
+  Name: Music
   clip: {fileID: 8300000, guid: a5e25a43e3d26fc46a594c0f9e8bed17, type: 3}
   pitch: 1
   volume: 1

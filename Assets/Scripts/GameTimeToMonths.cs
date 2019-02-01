@@ -8,6 +8,7 @@ public class GameTimeToMonths : MonoBehaviour
     GameController gameController;
     float gameTime = 0;
     Text monthsText;
+    public IntVariable MonthsEndured;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class GameTimeToMonths : MonoBehaviour
     private void UpdateText()
     {
         monthsText.text = ConvertToMonths().ToString();
+        MonthsEndured.Value = ConvertToMonths();
     }
 
     public int ConvertToYears()
@@ -33,6 +35,6 @@ public class GameTimeToMonths : MonoBehaviour
 
     public int ConvertToMonths()
     {
-        return Mathf.FloorToInt(gameTime * 1.8f * 12);
+        return (Mathf.FloorToInt(gameTime * 1.8f * 12) % 12);
     }
 }

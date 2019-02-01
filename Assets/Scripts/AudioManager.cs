@@ -15,19 +15,15 @@ public class AudioManager : MonoBehaviour {
 
         if (Instance == null)
         {
-
             Instance = this;
-
         }
-        else if (Instance != this) {
-
-            Destroy(this);
+        else if (Instance != this)
+        {
+            Destroy(this.gameObject);
             return;
-
         }
 
-        PlayMusic(!PlayerPrefs.HasKey("music"));
-
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void PlayMusic(bool b) {
@@ -96,7 +92,6 @@ public class AudioManager : MonoBehaviour {
 
         if (sound != null)
         {
-
             soundPrefab.GetComponent<AudioSource>().pitch = sound.pitch;
             soundPrefab.GetComponent<AudioSource>().volume = sound.volume;
             soundPrefab.GetComponent<AudioSource>().clip = sound.clip;
@@ -109,10 +104,9 @@ public class AudioManager : MonoBehaviour {
                 Destroy(obj, sound.clip.length + 0.25f);
             }
         }
-        else {
-
+        else
+        {
             Debug.Log(name + " sound not found.");
-
         }
 
     }

@@ -22,14 +22,17 @@ public class MouseOverData : MonoBehaviour
 
     void Update()
     {
-        if (PauseGame.Pause)
+        if (GameController.Instance.Pause)
             return;
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (CurrentlyActiveController != null)
+            if (GameController.CurrentlySelectedStichija != Stichija.Nothing)
             {
-                CurrentlyActiveController.GetComponent<OnLeftClick>().LeftClick();
+                if (CurrentlyActiveController != null)
+                {
+                    CurrentlyActiveController.GetComponent<OnLeftClick>().LeftClick();
+                }
             }
         }
 

@@ -10,8 +10,8 @@ public class RotateAround : MonoBehaviour
 
     public void Update()
     {
-        if (Rotate && !PauseGame.Pause)
-            this.transform.Rotate(rotation * speed * Time.deltaTime);
+        if (Rotate && (GameController.Instance == null || !GameController.Instance.Pause))
+            this.transform.localEulerAngles += rotation * Time.deltaTime * speed;
     }
 
 }

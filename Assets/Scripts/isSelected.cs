@@ -18,7 +18,7 @@ public class isSelected : MonoBehaviour
 
     public void OnClick()
     {
-        if (PauseGame.Pause)
+        if (GameController.Instance.Pause)
             return;
 
         DeselectAll();

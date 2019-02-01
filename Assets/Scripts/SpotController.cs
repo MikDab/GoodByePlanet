@@ -19,24 +19,19 @@ public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
     public void Awake()
     {
         pollutionReference = FindObjectOfType<Pollution>();
-        trees = transform.GetChild(0).gameObject;
-        StopParticles();
     }
 
     void StopParticles()
     {
-        foreach (ParticleSystem p in ParticleSystemObject.GetComponents<ParticleSystem>())
-        {
-            p.Stop();
-        }
+        ParticleSystemObject.SetActive(false);
     }
 
     void PlayParticles()
     {
-        foreach (ParticleSystem p in ParticleSystemObject.GetComponents<ParticleSystem>())
-        {
-            p.Play();
-        }
+        if (ParticleSystemObject.activeSelf)
+            ParticleSystemObject.SetActive(false);
+
+        ParticleSystemObject.SetActive(true);
     }
 
     public void RightClick()
@@ -60,43 +55,47 @@ public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
     {
         if (CurrentlyEnabled != null)
         {
-            if (CurrentlyEnabled.GetComponent<OnLeftClick>() != null)
+            foreach (OnLeftClick clk in CurrentlyEnabled.GetComponents<OnLeftClick>())
             {
-                CurrentlyEnabled.GetComponent<OnLeftClick>().LeftClick();
+                clk.LeftClick();
             }
-            if (this.GetComponent<SpawnAnimaton>() != null)
+
+            if (this.GetComponent<SpawnAnimation>() != null)
             {
                 switch (GameController.CurrentlySelectedStichija)
                 {
                     case Stichija.Zaibas:
-                        this.GetComponent<SpawnAnimaton>().setLightning();
+                        this.GetComponent<SpawnAnimation>().setLightning();
                         break;
                     case Stichija.Audra:
-                        this.GetComponent<SpawnAnimaton>().setRain();
+                        this.GetComponent<SpawnAnimation>().setRain();
                         break;
                     case Stichija.Viesulas:
-                        this.GetComponent<SpawnAnimaton>().setTornado();
+                        this.GetComponent<SpawnAnimation>().setTornado();
                         break;
                     default:
                         break;
                 }
             }
+            PlayParticles();
         }
     }
 
-    public void EnableTrees(bool value)
+    public void EnableTrees()
     {
         if (CurrentlyEnabled == null)
         {
-            trees.gameObject.SetActive(value);
+            trees.gameObject.SetActive(true);
             CurrentlyEnabled = trees;
+            ShrunkTrees = false;
         }
         else if (CurrentlyEnabled == trees)
         {
             if (ShrunkTrees)
             {
-                this.GetComponent<Animator>().SetTrigger("Grow");
+                trees.GetComponentInChildren<Animator>().SetTrigger("Grow");
                 pollutionReference.ReducePollution();
+                ShrunkTrees = false;
             }
         }
     }
@@ -114,7 +113,7 @@ public class SpotController : MonoBehaviour, OnRightClick, OnLeftClick
     {
         if (CurrentlyEnabled == trees)
         {
-            trees.GetComponent<Animator>().SetTrigger("Shrink");
+            trees.GetComponentInChildren<Animator>().SetTrigger("Shrink");
             pollutionReference.IncreasePollution();
             ShrunkTrees = true;
         }

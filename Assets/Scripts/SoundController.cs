@@ -4,23 +4,43 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    public void PlayDefaultMouseSound()
-    {
-        if (PauseGame.Pause)
-            return;
 
-        if (Input.GetButtonDown("Fire1"))
+    bool musicPlaying = false;
+
+    void Awake()
+    {
+        if (!PlayerPrefs.HasKey("Music"))
         {
-            AudioManager.Instance.PlaySound("MouseClick1");
+            AudioManager.Instance.PlayMusic(true);
+            musicPlaying = true;
         }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            AudioManager.Instance.PlaySound("MouseClick2");
-        }
+    }
+
+    public void DefaultClickSound()
+    {
+        AudioManager.Instance.PlaySound("MouseClick");
     }
 
     public void PlayPopSound()
     {
-        AudioManager.Instance.PlaySound("Pop" + Random.Range(1, 3));
+        AudioManager.Instance.PlaySound("Pop");
+    }
+
+    public void ToggleMusic()
+    {
+        musicPlaying = !musicPlaying;
+        AudioManager.Instance.PlayMusic(musicPlaying);
+
+        if (musicPlaying)
+        {
+            if (PlayerPrefs.HasKey("Music"))
+            {
+                PlayerPrefs.DeleteKey("Music");
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetString("Music", "Off");
+        }
     }
 }
